@@ -18,7 +18,7 @@ http<span>://</span>192.168.1.1/ghdDAGb
 
 # Requirement
 
-Dockerをインストールしたサーバーを1台
+Docker と Docker Compose をインストールしたサーバーを1台
 
 # Installation
 
