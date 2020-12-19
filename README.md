@@ -8,13 +8,13 @@
 
 # Description
 
-https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
-
-↓
-
-http<span>://</span>192.168.1.1/ghdDAGb
-
 長いURLを短い文字列のディレクトリとして表現します。
+
+例えば、  
+https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message  
+を  
+http<span>://</span>192.168.1.1/ghdDAGb  
+に短縮します。
 
 # Requirement
 
