@@ -6,7 +6,7 @@
 
 このアプリ利用によるトラブルについて責任は持てませんのでご了承ください。
 
-# DEMO
+# Description
 
 https://helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
 
