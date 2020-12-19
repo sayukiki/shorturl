@@ -29,7 +29,8 @@ async def get_shorturl(request):
 
 async def register(url):
     
-    key = get_key(10)
+    strlen = int(os.environ['STR_LENGTH'])
+    key = get_key(strlen)
     expire = int(os.environ['EXPIRE'])
 
     ok = await redis.set(key, url, expire=expire, exist=redis.SET_IF_NOT_EXIST)

@@ -21,6 +21,7 @@ services:
             - 80:8000
         environment:
             ROOT_URL: $ROOT_URL
+            STR_LENGTH: $STR_LENGTH
             EXPIRE: $EXPIRE
             POOL_MIN_SIZE: $POOL_MIN_SIZE
             POOL_MAX_SIZE: $POOL_MAX_SIZE
