@@ -8,7 +8,7 @@
 
 # Description
 
-https&#58;//helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
+https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
 
 ↓
 
@@ -28,9 +28,9 @@ docker run -d -p 80:8000 -e ROOT_URL={このサービスのURL} sayukiki/shortur
 
 サーバーの名前（名前解決できる名前かIP）
 
-- https://shorturl.sayukiki.com  (フロントにNginxなどがあってHTTPSで受け付けたい場合)
-- http://shorturl.intranet  (社内システムのhostsに設定できる場合)
-- http://192.168.1.1  (IPを直に指定する場合)
+- https<span>://</span>shorturl.sayukiki.com  (フロントにNginxなどがあってHTTPSで受け付けたい場合)
+- http<span>://</span>shorturl.intranet  (社内システムのhostsに設定できる場合)
+- http<span>://</span>192.168.1.1  (IPを直に指定する場合)
 
 など
 
@@ -40,20 +40,20 @@ docker run -d -p 80:8000 -e ROOT_URL={このサービスのURL} sayukiki/shortur
 
 ### Request
 
-[GET]http://192.168.1.1/?url=https%3A%2F%2Fhelpdesk.sayukiki.com%2Fapi%2Fhooks%2Fline%2Fv1%2Faccounts%2Fxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%2Fmessage
+[GET]http<span>://</span>192.168.1.1/?url=https%3A%2F%2Fhelpdesk.sayukiki.com%2Fapi%2Fhooks%2Fline%2Fv1%2Faccounts%2Fxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%2Fmessage
 
 パラメーターurlに与えるURLはエンコードしてください。
 
 ### Response
 
-[200]http://192.168.1.1/ghdDAGb
+[200]http<span>://</span>192.168.1.1/ghdDAGb
 
 ## 短縮したURLを使いたい
 
 ### Request
 
-[GET]http://192.168.1.1/ghdDAGb
+[GET]http<span>://</span>192.168.1.1/ghdDAGb
 
 ### Response
 
-[302]https://helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
+[302]https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message
