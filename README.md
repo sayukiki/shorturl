@@ -22,17 +22,11 @@ Docker と Docker Compose をインストールしたサーバーを1台
 
 # Installation
 
-docker build -t sayukiki/shorturl .
+.env の ROOT_URL をサービスURLに（例えば、http<span>://</span>172.16.1.1）
 
-docker run -d -p 80:8000 -e ROOT_URL={このサービスのURL} sayukiki/shorturl
-
-サーバーの名前（名前解決できる名前かIP）
-
-- https<span>://</span>shorturl.sayukiki.com  (フロントにNginxなどがあってHTTPSで受け付けたい場合)
-- http<span>://</span>shorturl.intranet  (社内システムのhostsに設定できる場合)
-- http<span>://</span>192.168.1.1  (IPを直に指定する場合)
-
-など
+```
+docker-compose up -d
+```
 
 # Usage
 
