@@ -14,7 +14,7 @@
 https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message  
 を  
 http<span>://</span>192.168.1.1/ghdDAGb53q  
-に短縮します。ディレクトリは10文字英数大文字小文字で表現されます。
+に短縮します。
 
 # Requirement
 
@@ -47,6 +47,10 @@ docker-compose up -d
 ### Response
 
 [200]http<span>://</span>192.168.1.1/ghdDAGb53q
+
+半角英数字大文字小文字10文字に短縮します。  
+有効期限は60日です。  
+有効期限切れになると、別のURLに再利用されます。
 
 ## 短縮したURLを使いたい
 
