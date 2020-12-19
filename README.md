@@ -1,6 +1,6 @@
 # ShortURL
 
-よくあるURL短縮アプリです。  
+よくあるURL短縮サービスです。  
 誰でも簡単にプライベートな環境で使えるようにと思い作りました。  
 手軽さ全振り。セキュリティーは全く考慮しておりません。  
 
@@ -13,7 +13,7 @@
 例えば、  
 https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message  
 を  
-http<span>://</span>192.168.1.1/ghdDAGb  
+http<span>://</span>192.168.1.1/ghdDAGb53q  
 に短縮します。
 
 # Requirement
@@ -22,17 +22,17 @@ Docker と Docker Compose をインストールしたサーバーを1台
 
 # Installation
 
-docker build -t sayukiki/shorturl .
+.env の ROOT_URL をサービスURLに変更。
 
-docker run -d -p 80:8000 -e ROOT_URL={このサービスのURL} sayukiki/shorturl
+```
+ROOT_URL=http://172.16.1.1
+```
 
-サーバーの名前（名前解決できる名前かIP）
+サービスを起動。
 
-- https<span>://</span>shorturl.sayukiki.com  (フロントにNginxなどがあってHTTPSで受け付けたい場合)
-- http<span>://</span>shorturl.intranet  (社内システムのhostsに設定できる場合)
-- http<span>://</span>192.168.1.1  (IPを直に指定する場合)
-
-など
+```
+docker-compose up -d
+```
 
 # Usage
 
@@ -46,13 +46,17 @@ docker run -d -p 80:8000 -e ROOT_URL={このサービスのURL} sayukiki/shortur
 
 ### Response
 
-[200]http<span>://</span>192.168.1.1/ghdDAGb
+[200]http<span>://</span>192.168.1.1/ghdDAGb53q
+
+半角英数字大文字小文字10文字に短縮します。  
+有効期限は60日です。  
+有効期限切れになると、別のURLに再利用されます。
 
 ## 短縮したURLを使いたい
 
 ### Request
 
-[GET]http<span>://</span>192.168.1.1/ghdDAGb
+[GET]http<span>://</span>192.168.1.1/ghdDAGb53q
 
 ### Response
 
