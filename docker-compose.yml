@@ -19,7 +19,8 @@ services:
             - "database"
         ports:
             - 80:8000
-        volumes:
-            - $PWD/webapps:/code
         environment:
             ROOT_URL: $ROOT_URL
+            EXPIRE: $EXPIRE
+            POOL_MIN_SIZE: $POOL_MIN_SIZE
+            POOL_MAX_SIZE: $POOL_MAX_SIZE

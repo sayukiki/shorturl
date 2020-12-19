@@ -1,29 +1,38 @@
 import os
 import random, string
-from urllib.parse import unquote, urljoin
+from urllib.parse import unquote, urljoin, urlparse
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from . import redis
 
 # Create your views here.
 
-def randomname(n):
+def get_key(n):
    return ''.join(random.choices(string.ascii_letters + string.digits, k=n))
 
 async def get_shorturl(request):
 
     url = unquote(request.GET.get('url'))
 
+    o = urlparse(url)
+    if len(o.scheme) == 0 or len(o.netloc) == 0:
+        return HttpResponse(status=400)
+
+    root = os.environ['ROOT_URL']
+
     for _ in range(10):
         key = await register(url)
         if key:
-            return HttpResponse(urljoin(os.environ['ROOT_URL'], key))
+            return HttpResponse(urljoin(root, key))
 
     return HttpResponse(status=503)
 
 async def register(url):
-    key = randomname(10)
-    ok = await redis.set(key, url, expire=5184000, exist=redis.SET_IF_NOT_EXIST)
+    
+    key = get_key(10)
+    expire = int(os.environ['EXPIRE'])
+
+    ok = await redis.set(key, url, expire=expire, exist=redis.SET_IF_NOT_EXIST)
     if ok:
         return key
 
