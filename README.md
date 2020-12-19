@@ -22,7 +22,13 @@ Docker と Docker Compose をインストールしたサーバーを1台
 
 # Installation
 
-.env の ROOT_URL をサービスURLに（例えば、http<span>://</span>172.16.1.1）
+.env の ROOT_URL をサービスURLに変更。
+
+```
+ROOT_URL=http://172.16.1.1
+```
+
+サービスを起動。
 
 ```
 docker-compose up -d
