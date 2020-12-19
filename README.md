@@ -13,8 +13,8 @@
 例えば、  
 https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/message  
 を  
-http<span>://</span>192.168.1.1/ghdDAGb  
-に短縮します。
+http<span>://</span>192.168.1.1/ghdDAGb53q  
+に短縮します。ディレクトリは10文字英数大文字小文字で表現されます。
 
 # Requirement
 
@@ -46,13 +46,13 @@ docker-compose up -d
 
 ### Response
 
-[200]http<span>://</span>192.168.1.1/ghdDAGb
+[200]http<span>://</span>192.168.1.1/ghdDAGb53q
 
 ## 短縮したURLを使いたい
 
 ### Request
 
-[GET]http<span>://</span>192.168.1.1/ghdDAGb
+[GET]http<span>://</span>192.168.1.1/ghdDAGb53q
 
 ### Response
 
