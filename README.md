@@ -12,7 +12,7 @@ https<span>://</span>helpdesk.sayukiki.com/api/hooks/line/v1/accounts/xxxxxxxx-x
 
 ↓
 
-{ROOT_URL}/ghdDAGb
+http<span>://</span>192.168.1.1/ghdDAGb
 
 長いURLを短い文字列のディレクトリとして表現します。
 
